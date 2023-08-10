@@ -1,38 +1,64 @@
 <template>
-
-    <main>
-      <div>
-        <!--<img src="@/assets/logo.png">-->
-        <h2>{{title}}</h2>
-      </div>
-    
-    </main>
-
+  <v-carousel
+    cycle
+    height="400"
+    hide-delimiter-background
+    show-arrows="hover"
+  >
+    <v-carousel-item
+      v-for="(slide, i) in slides"
+      :key="i"
+    >
+      <v-sheet
+        :color="colors[i]"
+        height="100%"
+      >
+        <div class="d-flex fill-height justify-center align-center">
+          <div class="text-h2">
+            {{ slide }} Slide
+          </div>
+        </div>
+      </v-sheet>
+    </v-carousel-item>
+  </v-carousel>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      title: "Kanda1024's Homepage"
-    }
-  }
-}
+<script setup>
+  const colors = [
+    'indigo',
+    'warning',
+    'pink darken-2',
+    'red lighten-1',
+    'deep-purple accent-4',
+  ]
+  const slides = [
+    'First',
+    'Second',
+    'Third',
+    'Fourth',
+    'Fifth',
+  ]
 </script>
 
-
-<style scoped>
-/*main {
-  height: calc(100vh - 152px);
-  padding: 3% 0;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url('../assets/logo.png');
-}
-h2 {
-  margin: 0;
-}
-*/
-</style>
+<script>
+  export default {
+    data () {
+      return {
+        colors: [
+          'indigo',
+          'warning',
+          'pink darken-2',
+          'red lighten-1',
+          'deep-purple accent-4',
+        ],
+        slides: [
+          'First',
+          'Second',
+          'Third',
+          'Fourth',
+          'Fifth',
+        ],
+      }
+    },
+  }
+</script>

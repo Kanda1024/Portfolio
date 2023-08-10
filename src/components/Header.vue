@@ -1,13 +1,15 @@
 <template>
-    <v-app>
-        <header>
-            <div class="row">
+    <div>
+        <v-app-bar app>
+            <v-toolbar-title>Vuetify</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-toolbar-items>
                 <v-tab v-for="(menu) in menu_list" :key="menu.id" v-scroll-to="menu.scrollTo">
-                    <v-icon> {{ menu.icon }}</v-icon>    {{ menu.name }} 
-                </v-tab> 
-            </div>
-        </header>
-    </v-app>
+                    <v-icon> {{ menu.icon }}</v-icon>    {{ menu.name }}
+                </v-tab>
+            </v-toolbar-items>
+        </v-app-bar>
+    </div>
 </template>
 
 <script>
@@ -18,13 +20,15 @@
                     {name: 'Home', id:"num1", scrollTo: '#home', icon: 'mdi-home'},
                     {name: 'Profile', id:"num2", scrollTo: '#profile', icon: 'mdi-account'},
                     {name: 'Skill', id:"num3", scrollTo: '#skill', icon: 'mdi-laptop'},
-                    {name: 'Contact', id:"num4", scrollTo: '#contact', icon: 'mdi-card-account-mail'},
+                    {name: 'Work', id:"num4", scrollTo: '#work', icon: 'mdi-folder'},
+                    {name: 'Contact', id:"num5", scrollTo: '#contact', icon: 'mdi-card-account-mail'},
                 ]
             }
         }
     }
 </script>
-  
+
+<!--
 <style scoped>
 header {
     width: 100%;
@@ -75,3 +79,4 @@ h1 {
 
 
 
+-->

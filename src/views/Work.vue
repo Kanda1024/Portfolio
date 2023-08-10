@@ -1,15 +1,17 @@
 <template>
     <v-main>
-      <v-container>
+      <v-container fill-height>
+        <v-layout wrap>
           <v-row>
             <v-col v-for="(card,index) in card_list" :key="index" cols="4">
-              <v-card variant="outlined" elevation="10" class="justify-center" width="400">
+              <v-card variant="outlined" elevation="10">
                 <v-card-title> {{ card.text }} </v-card-title>
                 <v-card-text> {{ card.text }}</v-card-text>
                 <v-icon> {{ card.icon }}</v-icon>
               </v-card>
             </v-col>
           </v-row>
+        </v-layout>
       </v-container>
     
     </v-main>
